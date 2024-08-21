@@ -11,6 +11,7 @@ app_name = "grade"
 urlpatterns = [
     path("", views.GradeList.as_view(), name="grade-list"),
     path("detail/", views.GradeDetail.as_view(), name="grade-detail"),
+    path("view/", views.GradeView.as_view(), name="grade-view"),
     path("create/", views.GradeCreate.as_view(), name="grade-create"),
     path("update/", views.GradeUpdate.as_view(), name="grade-update"),
 ]

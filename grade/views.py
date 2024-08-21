@@ -22,6 +22,24 @@ class GradeList(View, TemplateView):
         return render(request, self.template_name, context)
 
 
+class GradeView(View, TemplateView):
+    template_name = "grade/view.html"
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+
+        context["title"] = "Grades View "
+        context["link"] = "grade"
+
+        return context
+
+    def get(self, request, *args, **kwargs):
+
+        context = self.get_context_data(*args, **kwargs)
+
+        return render(request, self.template_name, context)
+
+
 class GradeDetail(View, TemplateView):
     template_name = "grade/detail.html"
 
